@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Mario Arreola Rendón — Senior Frontend Developer con 7 años de experiencia especializado en React, Flutter y arquitecturas Micro Frontend a escala empresarial. Disponible para posiciones remotas de alto impacto.">
+  <meta name="keywords"
+    content="Senior Frontend Developer, React, Flutter, TypeScript, Micro Frontends, JavaScript, AWS, Docker, Ciudad de México, Mexico">
+  <meta name="author" content="Mario Arreola Rendón">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://marioarreola.dev/">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Mario Arreola Rendón — Senior Frontend Developer">
+  <meta property="og:description"
+    content="7 años construyendo productos digitales de alto impacto para Grupo Salinas, Sky y Financiera Independencia. React · Flutter · TypeScript · Micro Frontends.">
+  <meta property="og:url" content="https://marioarreola.dev/">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="Mario Arreola Rendón">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Mario Arreola Rendón — Senior Frontend Developer">
+  <meta name="twitter:description"
+    content="7 años construyendo productos digitales de alto impacto. React · Flutter · TypeScript · Micro Frontends.">
+
+  <title>Mario Arreola Rendón — Senior Frontend Developer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+    rel="stylesheet">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mario Arreola Rendón",
+  "givenName": "Mario",
+  "familyName": "Arreola Rendón",
+  "jobTitle": "Senior Frontend Developer",
+  "email": "mailto:arreolamario96@gmail.com",
+  "url": "https://marioarreola.dev/",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ciudad de México",
+    "addressCountry": "MX"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "UPIICSA — Instituto Politécnico Nacional"
+  },
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Grupo Salinas"
+  },
+  "knowsAbout": [
+    "React", "Flutter", "TypeScript", "JavaScript",
+    "Micro Frontends", "Module Federation", "Vite",
+    "AWS", "Docker", "Jenkins", "SonarQube"
+  ]
+}
+</script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    :root {
+      --bg: #0A0A0A;
+      --bg2: #111111;
+      --bg3: #181818;
+      --coral: #D85A30;
+      --coral-light: #F0997B;
+      --teal: #1D9E75;
+      --teal-light: #5DCAA5;
+      --text: #F0EDE8;
+      --text-muted: #888780;
+      --border: #2A2A2A;
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden
+    }
+
+    /* Skip to content */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden
+    }
+
+    .skip-link:focus {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 9999;
+      padding: 0.75rem 1.5rem;
+      background: var(--coral);
+      color: #fff;
+      border-radius: 4px;
+      width: auto;
+      height: auto;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.9rem
+    }
+
+    /* Focus visible */
+    *:focus-visible {
+      outline: 2px solid var(--coral);
+      outline-offset: 3px;
+      border-radius: 2px
+    }
+
+    /* Header / Nav */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(10, 10, 10, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border)
+    }
+
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      text-decoration: none
+    }
+
+    .nav-logo span {
+      color: var(--coral)
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 2rem
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      position: relative;
+      padding-bottom: 2px
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--coral);
+      transition: width 0.25s ease
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--coral)
+    }
+
+    .nav-links a.active::after,
+    .nav-links a:hover::after {
+      width: 100%
+    }
+
+    .lang-toggle {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-shrink: 0;
+      white-space: nowrap
+    }
+
+    .lang-toggle:hover {
+      border-color: var(--coral);
+      color: var(--coral)
+    }
+
+    /* Hamburger button */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 201;
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease
+    }
+
+    .hamburger[aria-expanded="true"] span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg)
+    }
+
+    .hamburger[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0)
+    }
+
+    .hamburger[aria-expanded="true"] span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg)
+    }
+
+    /* Mobile menu overlay */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--bg);
+      z-index: 199;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      padding: 2rem
+    }
+
+    .mobile-menu.is-open {
+      opacity: 1;
+      visibility: visible
+    }
+
+    .mobile-menu-nav {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 2.5rem
+    }
+
+    .mobile-menu-nav li a {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.03em;
+      transition: color 0.2s, transform 0.4s ease, opacity 0.4s ease;
+      display: block;
+      transform: translateY(20px);
+      opacity: 0
+    }
+
+    .mobile-menu.is-open .mobile-menu-nav li:nth-child(1) a {
+      transition-delay: 0.05s
+    }
+
+    .mobile-menu.is-open .mobile-menu-nav li:nth-child(2) a {
+      transition-delay: 0.1s
+    }
+
+    .mobile-menu.is-open .mobile-menu-nav li:nth-child(3) a {
+      transition-delay: 0.15s
+    }
+
+    .mobile-menu.is-open .mobile-menu-nav li:nth-child(4) a {
+      transition-delay: 0.2s
+    }
+
+    .mobile-menu.is-open .mobile-menu-nav li a {
+      transform: translateY(0);
+      opacity: 1
+    }
+
+    .mobile-menu-nav li a:hover {
+      color: var(--coral)
+    }
+
+    .mobile-menu-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 2rem
+    }
+
+    .mobile-lang-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.5rem 1.2rem;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: all 0.2s
+    }
+
+    .mobile-lang-btn:hover {
+      border-color: var(--coral);
+      color: var(--coral)
+    }
+
+    /* Sections */
+    section {
+      padding: 5rem 2rem;
+      max-width: 900px;
+      margin: 0 auto
+    }
+
+    /* Hero */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 6rem;
+      max-width: none;
+      padding-left: 4rem;
+      padding-right: 4rem;
+      position: relative;
+      overflow: hidden
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 55vw;
+      height: 80vh;
+      background: radial-gradient(ellipse at center, rgba(216, 90, 48, 0.07) 0%, transparent 65%);
+      pointer-events: none;
+      z-index: 0
+    }
+
+    #hero>* {
+      position: relative;
+      z-index: 1
+    }
+
+    .hero-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--teal-light);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.2s forwards
+    }
+
+    .hero-name {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.4s forwards
+    }
+
+    .hero-name .accent {
+      color: var(--coral)
+    }
+
+    .hero-title {
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      color: var(--text-muted);
+      font-weight: 300;
+      max-width: 560px;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.6s forwards;
+      line-height: 1.6
+    }
+
+    .hero-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.8s forwards
+    }
+
+    .chip {
+      padding: 0.4rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 500
+    }
+
+    .chip.hl {
+      border-color: var(--coral);
+      color: var(--coral)
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 1s forwards
+    }
+
+    .btn-primary {
+      padding: 0.75rem 2rem;
+      background: var(--coral);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block
+    }
+
+    .btn-primary:hover {
+      background: #B84820;
+      transform: translateY(-1px)
+    }
+
+    .btn-outline {
+      padding: 0.75rem 2rem;
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.15s;
+      display: inline-block
+    }
+
+    .btn-outline:hover {
+      border-color: var(--text-muted);
+      transform: translateY(-1px)
+    }
+
+    .hero-scroll {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 1.2s forwards;
+      margin-top: 4rem
+    }
+
+    .scroll-line {
+      width: 40px;
+      height: 1px;
+      background: var(--text-muted)
+    }
+
+    /* Section label */
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin-bottom: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border)
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start
+    }
+
+    .about-text {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.8
+    }
+
+    .about-text strong {
+      color: var(--text);
+      font-weight: 500
+    }
+
+    .about-text p {
+      margin-bottom: 1.2rem
+    }
+
+    .about-text p:last-child {
+      margin-bottom: 0
+    }
+
+    .about-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem
+    }
+
+    .stat {
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg2);
+      transition: border-color 0.25s
+    }
+
+    .stat:hover {
+      border-color: rgba(216, 90, 48, 0.35)
+    }
+
+    .stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--coral);
+      line-height: 1
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em
+    }
+
+    /* Experience */
+    .exp-list {
+      display: flex;
+      flex-direction: column
+    }
+
+    .exp-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 0;
+      gap: 3rem
+    }
+
+    .exp-item:last-child {
+      border-bottom: 1px solid var(--border)
+    }
+
+    .exp-date {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      padding-top: 0.2rem;
+      line-height: 1.5
+    }
+
+    .exp-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+      margin-top: 0.5rem
+    }
+
+    .exp-badge.current {
+      background: rgba(29, 158, 117, 0.15);
+      color: var(--teal-light);
+      border: 1px solid rgba(29, 158, 117, 0.3)
+    }
+
+    .exp-company {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.2rem
+    }
+
+    .exp-role {
+      font-size: 0.85rem;
+      color: var(--coral);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem
+    }
+
+    .exp-highlights {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem
+    }
+
+    .exp-highlights li {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      padding-left: 1.25rem;
+      position: relative;
+      line-height: 1.6
+    }
+
+    .exp-highlights li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--coral);
+      font-size: 0.75rem;
+      top: 0.2rem
+    }
+
+    .exp-highlights li strong {
+      color: var(--text);
+      font-weight: 500
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem
+    }
+
+    .skill-group {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: border-color 0.25s
+    }
+
+    .skill-group:hover {
+      border-color: rgba(216, 90, 48, 0.25)
+    }
+
+    .skill-group-title {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--teal-light);
+      margin-bottom: 1rem
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem
+    }
+
+    .skill-tag {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      background: var(--bg3);
+      padding: 0.3rem 0.7rem;
+      border-radius: 4px;
+      border: 1px solid var(--border)
+    }
+
+    .skill-tag.highlight {
+      color: var(--text);
+      border-color: rgba(216, 90, 48, 0.4);
+      background: rgba(216, 90, 48, 0.08)
+    }
+
+    /* Contact */
+    #contact {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 5rem 4rem;
+      max-width: none
+    }
+
+    .contact-headline {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem
+    }
+
+    .contact-headline span {
+      color: var(--coral)
+    }
+
+    .contact-sub {
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      font-size: 1rem
+    }
+
+    .contact-email {
+      display: inline-block;
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      color: var(--text);
+      border-bottom: 2px solid var(--coral);
+      padding-bottom: 0.2rem;
+      text-decoration: none;
+      margin-bottom: 2.5rem;
+      transition: color 0.2s
+    }
+
+    .contact-email:hover {
+      color: var(--coral)
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      flex-wrap: wrap
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    .footer-left {
+      font-size: 0.8rem;
+      color: var(--text-muted)
+    }
+
+    .footer-right {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.2s
+    }
+
+    .footer-right:hover {
+      color: var(--coral)
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.65s ease, transform 0.65s ease
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    /* Reduced motion */
+    @media(prefers-reduced-motion:reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important
+      }
+
+      html {
+        scroll-behavior: auto
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    /* Tablet — hide desktop nav, show hamburger */
+    @media(max-width:768px) {
+      header {
+        padding: 1rem 1.25rem
+      }
+
+      .nav-links {
+        display: none
+      }
+
+      .hamburger {
+        display: flex
+      }
+    }
+
+    /* Mobile */
+    @media(max-width:640px) {
+      #hero {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem
+      }
+
+      #hero::before {
+        display: none
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr
+      }
+
+      .exp-item {
+        grid-template-columns: 1fr;
+        gap: 0.75rem
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1.5rem;
+        text-align: center
+      }
+
+      #contact {
+        padding: 5rem 1.5rem
+      }
+
+      .contact-info {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center
+      }
+    }
+
+    @media(max-width:480px) {
+      section {
+        padding: 4rem 1.25rem
+      }
+
+      .mobile-menu-nav li a {
+        font-size: 1.8rem
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
+
+  <header role="banner">
+    <a href="#hero" class="nav-logo" aria-label="Mario Arreola — inicio">MA<span>.</span></a>
+    <div class="nav-right">
+      <nav aria-label="Navegación principal">
+        <ul class="nav-links" id="desktopNav">
+          <li><a href="#about" data-i18n="nav-about">Perfil</a></li>
+          <li><a href="#experience" data-i18n="nav-exp">Experiencia</a></li>
+          <li><a href="#skills" data-i18n="nav-skills">Skills</a></li>
+          <li><a href="#contact" data-i18n="nav-contact">Contacto</a></li>
+        </ul>
+      </nav>
+      <button class="lang-toggle" id="langBtn" onclick="toggleLang()" aria-label="Cambiar idioma">🌐 EN</button>
+      <button class="hamburger" id="hamburgerBtn" aria-expanded="false" aria-controls="mobileMenu"
+        aria-label="Abrir menú de navegación">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+    <nav aria-label="Navegación móvil">
+      <ul class="mobile-menu-nav">
+        <li><a href="#about" class="mob-link" data-i18n="nav-about">Perfil</a></li>
+        <li><a href="#experience" class="mob-link" data-i18n="nav-exp">Experiencia</a></li>
+        <li><a href="#skills" class="mob-link" data-i18n="nav-skills">Skills</a></li>
+        <li><a href="#contact" class="mob-link" data-i18n="nav-contact">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="mobile-menu-divider"></div>
+    <button class="mobile-lang-btn" id="mobileLangBtn" onclick="toggleLang()" aria-label="Cambiar idioma">🌐 EN</button>
+  </div>
+
+  <main id="main-content">
+
+    <section id="hero">
+      <p class="hero-eyebrow" data-i18n="hero-eyebrow">Senior Frontend Developer · 7 años de experiencia</p>
+      <h1 class="hero-name">Mario<br>Arreola<br><span class="accent">Rendón.</span></h1>
+      <p class="hero-title" data-i18n="hero-title">Arquitecto de interfaces de alto impacto. Especialista en React,
+        Flutter y Micro Frontends — entrego desde la primera línea hasta producción.</p>
+      <div class="hero-chips" role="list" aria-label="Tecnologías principales">
+        <span class="chip hl" role="listitem">React</span>
+        <span class="chip hl" role="listitem">Flutter</span>
+        <span class="chip" role="listitem">TypeScript</span>
+        <span class="chip" role="listitem">Micro Frontends</span>
+        <span class="chip" role="listitem">AWS</span>
+        <span class="chip" role="listitem">Docker</span>
+        <span class="chip" role="listitem" data-i18n="chip-ai">IA-assisted dev</span>
+      </div>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary" data-i18n="hero-cta1">Trabajemos juntos</a>
+        <a href="#experience" class="btn-outline" data-i18n="hero-cta2">Ver experiencia</a>
+      </div>
+      <div class="hero-scroll" aria-hidden="true">
+        <span class="scroll-line"></span>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <section id="about" aria-labelledby="about-heading">
+      <p class="section-label" id="about-heading" data-i18n="about-label">Perfil</p>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="reveal" data-i18n="about-p1">Desarrollador con <strong>7 años de experiencia</strong> construyendo
+            productos digitales para empresas como Grupo Salinas, Sky y Financiera Independencia — plataformas con miles
+            de usuarios y despliegues a nivel nacional.</p>
+          <p class="reveal" style="transition-delay:0.1s" data-i18n="about-p2">Me especializo en <strong>arquitecturas
+              frontend de alto impacto</strong>: migración de monolitos a Micro Frontends, apps móviles con Flutter y
+            design systems reutilizables a escala empresarial.</p>
+          <p class="reveal" style="transition-delay:0.2s" data-i18n="about-p3">Resuelvo en <strong>cualquier capa del
+              stack</strong> — frontend, backend, bases de datos y DevOps — e integro IA para entregar con mayor
+            velocidad sin ceder en calidad.</p>
+        </div>
+        <div class="about-stats">
+          <div class="stat reveal" style="transition-delay:0.05s">
+            <div class="stat-num">7+</div>
+            <div class="stat-label" data-i18n="stat1">Años en producción</div>
+          </div>
+          <div class="stat reveal" style="transition-delay:0.15s">
+            <div class="stat-num">5</div>
+            <div class="stat-label" data-i18n="stat2">Empresas de alto impacto</div>
+          </div>
+          <div class="stat reveal" style="transition-delay:0.25s">
+            <div class="stat-num">3</div>
+            <div class="stat-label" data-i18n="stat3">Plataformas a nivel nacional</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" aria-labelledby="exp-heading">
+      <p class="section-label" id="exp-heading" data-i18n="exp-label">Experiencia</p>
+      <div class="exp-list">
+
+        <article class="exp-item reveal">
+          <div class="exp-date">
+            <span>Mar 2024 — <span data-i18n="present">Presente</span></span>
+            <span class="exp-badge current" data-i18n="current">Actual</span>
+          </div>
+          <div class="exp-right">
+            <div class="exp-company">Grupo Salinas</div>
+            <div class="exp-role" data-i18n="role-senior">Senior Software Developer</div>
+            <ul class="exp-highlights">
+              <li data-i18n="gs-1"><strong>Arquitecté e implementé de forma independiente</strong> la migración completa
+                del frontend de vanilla JS a React con Micro Frontends (Vite + Module Federation) — eliminando un
+                monolito legacy y habilitando entregas independientes por módulo.</li>
+              <li data-i18n="gs-2">Diseñé y publiqué una <strong>librería de componentes UI</strong> y una
+                <strong>librería de utilidades cifrado/descifrado</strong> adoptadas por múltiples equipos — eliminando
+                duplicación de código y garantizando consistencia visual a escala.</li>
+              <li data-i18n="gs-3">Desarrollé una <strong>aplicación web completa en 3 semanas</strong>, desde cero
+                hasta producción, hoy desplegada en sucursales a nivel nacional con cero incidencias críticas
+                post-lanzamiento.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp-item reveal">
+          <div class="exp-date">
+            <span>Jun 2022 — Mar 2024</span>
+          </div>
+          <div class="exp-right">
+            <div class="exp-company">Sky</div>
+            <div class="exp-role" data-i18n="role-senior">Senior Software Developer</div>
+            <ul class="exp-highlights">
+              <li data-i18n="sky-1">Integré <strong>pagos de servicios directamente en el bot de WhatsApp</strong>
+                usando Oracle + Infobip, ampliando el canal de autoatención y reduciendo la carga operativa del call
+                center.</li>
+              <li data-i18n="sky-2"><strong>Diagnostiqué y resolví una regresión crítica</strong> de bloqueo de recursos
+                estáticos en el sitio corporativo en pocas horas — restaurando disponibilidad y rendimiento sin
+                interrumpir usuarios activos.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp-item reveal">
+          <div class="exp-date">
+            <span>Feb 2022 — Mar 2024</span>
+          </div>
+          <div class="exp-right">
+            <div class="exp-company">Financiera Independencia</div>
+            <div class="exp-role">Flutter Developer</div>
+            <ul class="exp-highlights">
+              <li data-i18n="fi-1">Diseñé y desarrollé un <strong>dashboard integral en Flutter</strong> para ejecutivos
+                en sucursal: historial de pagos, referencias, capacidad crediticia y prospección de nuevos créditos —
+                consolidando múltiples sistemas en una sola interfaz.</li>
+              <li data-i18n="fi-2">Implementé <strong>autenticación biométrica</strong> para acceso seguro a datos
+                sensibles de clientes, cumpliendo estándares de seguridad financiera.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp-item reveal">
+          <div class="exp-date">
+            <span>Ene 2020 — Dic 2021</span>
+          </div>
+          <div class="exp-right">
+            <div class="exp-company">Iké Asistencia</div>
+            <div class="exp-role" data-i18n="role-dev">Desarrollador</div>
+            <ul class="exp-highlights">
+              <li data-i18n="ike-1">Desarrollé <strong>integraciones PHP para pasarelas de pago</strong> (webhooks) en
+                plataformas de venta de seguros con clientes como Oxxo, Tec de Monterrey y PepsiCo.</li>
+              <li data-i18n="ike-2">Cubrí tiempos de entrega de consultoría externa construyendo landing pages y ajustes
+                de diseño bajo presión, sin sacrificar calidad.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp-item reveal">
+          <div class="exp-date">
+            <span>Ene 2019 — Dic 2022</span>
+          </div>
+          <div class="exp-right">
+            <div class="exp-company">Inspira Cambio AC</div>
+            <div class="exp-role" data-i18n="role-dev">Desarrollador</div>
+            <ul class="exp-highlights">
+              <li data-i18n="ic-1">Desarrollé múltiples sitios web y blogs con HTML5, CSS3, JavaScript y WordPress.</li>
+              <li data-i18n="ic-2">Creé <strong>"Sácate la Duda"</strong> para la Alcaldía Álvaro Obregón — proyecto
+                presentado ante autoridades de salud pública de la Ciudad de México.</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-heading">
+      <p class="section-label" id="skills-heading" data-i18n="skills-label">Habilidades técnicas</p>
+      <div class="skills-grid">
+        <div class="skill-group reveal">
+          <div class="skill-group-title">Frontend</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">React</span><span class="skill-tag highlight">Flutter</span>
+            <span class="skill-tag highlight">TypeScript</span><span class="skill-tag highlight">JavaScript</span>
+            <span class="skill-tag">Angular</span><span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span><span class="skill-tag">Vite</span>
+            <span class="skill-tag">Micro Frontends</span>
+          </div>
+        </div>
+        <div class="skill-group reveal" style="transition-delay:0.05s">
+          <div class="skill-group-title">Backend &amp; DB</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Java</span><span class="skill-tag">Spring Boot</span>
+            <span class="skill-tag">PHP</span><span class="skill-tag">Oracle</span>
+            <span class="skill-tag">WordPress</span>
+          </div>
+        </div>
+        <div class="skill-group reveal" style="transition-delay:0.1s">
+          <div class="skill-group-title">Cloud &amp; DevOps</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">AWS (ECS, ECR)</span><span class="skill-tag highlight">Docker</span>
+            <span class="skill-tag">Jenkins</span><span class="skill-tag">SonarQube</span>
+            <span class="skill-tag">Git</span>
+          </div>
+        </div>
+        <div class="skill-group reveal" style="transition-delay:0.15s">
+          <div class="skill-group-title" data-i18n="sg-design">Diseño &amp; Producto</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Figma</span><span class="skill-tag">Adobe XD</span>
+            <span class="skill-tag">Zeplin</span><span class="skill-tag">Swagger</span>
+            <span class="skill-tag">Postman</span>
+          </div>
+        </div>
+        <div class="skill-group reveal" style="transition-delay:0.2s">
+          <div class="skill-group-title" data-i18n="sg-ai">IA &amp; Productividad</div>
+          <div class="skill-tags">
+            <span class="skill-tag highlight">Claude</span><span class="skill-tag highlight">GitHub Copilot</span>
+            <span class="skill-tag">ChatGPT</span><span class="skill-tag">Gemini</span>
+            <span class="skill-tag">Jira</span>
+          </div>
+        </div>
+        <div class="skill-group reveal" style="transition-delay:0.25s">
+          <div class="skill-group-title" data-i18n="sg-env">Entornos</div>
+          <div class="skill-tags">
+            <span class="skill-tag">macOS</span><span class="skill-tag">Linux</span>
+            <span class="skill-tag">Windows</span><span class="skill-tag">VSCode</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <section id="contact" aria-labelledby="contact-heading">
+    <p class="section-label" style="justify-content:center" id="contact-heading" data-i18n="contact-label">Contacto</p>
+    <h2 class="contact-headline" data-i18n="contact-headline">¿Trabajamos<br><span>juntos?</span></h2>
+    <p class="contact-sub" data-i18n="contact-sub">Disponible para posiciones remotas de alto impacto.</p>
+    <a class="contact-email" href="mailto:arreolamario96@gmail.com"
+      aria-label="Enviar correo a arreolamario96@gmail.com">arreolamario96@gmail.com</a>
+    <div class="contact-info">
+      <span>📍 Ciudad de México</span>
+      <span data-i18n="contact-remote">🖥 Remoto preferible</span>
+      <span>🎓 Ing. Informática · UPIICSA — IPN</span>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-left">© 2026 Mario Arreola Rendón</span>
+    <a href="#hero" class="footer-right" aria-label="Volver al inicio">MA<span style="color:var(--coral)">.</span></a>
+  </footer>
+
+  <script>
+    const i18n = {
+      es: {
+        "nav-about": "Perfil",
+        "nav-exp": "Experiencia",
+        "nav-skills": "Skills",
+        "nav-contact": "Contacto",
+        "hero-eyebrow": "Senior Frontend Developer · 7 años de experiencia",
+        "hero-title": "Arquitecto de interfaces de alto impacto. Especialista en React, Flutter y Micro Frontends — entrego desde la primera línea hasta producción.",
+        "chip-ai": "IA-assisted dev",
+        "hero-cta1": "Trabajemos juntos",
+        "hero-cta2": "Ver experiencia",
+        "about-label": "Perfil",
+        "about-p1": "Desarrollador con <strong>7 años de experiencia</strong> construyendo productos digitales para empresas como Grupo Salinas, Sky y Financiera Independencia — plataformas con miles de usuarios y despliegues a nivel nacional.",
+        "about-p2": "Me especializo en <strong>arquitecturas frontend de alto impacto</strong>: migración de monolitos a Micro Frontends, apps móviles con Flutter y design systems reutilizables a escala empresarial.",
+        "about-p3": "Resuelvo en <strong>cualquier capa del stack</strong> — frontend, backend, bases de datos y DevOps — e integro IA para entregar con mayor velocidad sin ceder en calidad.",
+        "stat1": "Años en producción",
+        "stat2": "Empresas de alto impacto",
+        "stat3": "Plataformas a nivel nacional",
+        "exp-label": "Experiencia",
+        "present": "Presente",
+        "current": "Actual",
+        "role-senior": "Senior Software Developer",
+        "role-dev": "Desarrollador",
+        "gs-1": "<strong>Arquitecté e implementé de forma independiente</strong> la migración completa del frontend de vanilla JS a React con Micro Frontends (Vite + Module Federation) — eliminando un monolito legacy y habilitando entregas independientes por módulo.",
+        "gs-2": "Diseñé y publiqué una <strong>librería de componentes UI</strong> y una <strong>librería de utilidades cifrado/descifrado</strong> adoptadas por múltiples equipos — eliminando duplicación de código y garantizando consistencia visual a escala.",
+        "gs-3": "Desarrollé una <strong>aplicación web completa en 3 semanas</strong>, desde cero hasta producción, hoy desplegada en sucursales a nivel nacional con cero incidencias críticas post-lanzamiento.",
+        "sky-1": "Integré <strong>pagos de servicios directamente en el bot de WhatsApp</strong> usando Oracle + Infobip, ampliando el canal de autoatención y reduciendo la carga operativa del call center.",
+        "sky-2": "<strong>Diagnostiqué y resolví una regresión crítica</strong> de bloqueo de recursos estáticos en el sitio corporativo en pocas horas — restaurando disponibilidad y rendimiento sin interrumpir usuarios activos.",
+        "fi-1": "Diseñé y desarrollé un <strong>dashboard integral en Flutter</strong> para ejecutivos en sucursal: historial de pagos, referencias, capacidad crediticia y prospección de nuevos créditos — consolidando múltiples sistemas en una sola interfaz.",
+        "fi-2": "Implementé <strong>autenticación biométrica</strong> para acceso seguro a datos sensibles de clientes, cumpliendo estándares de seguridad financiera.",
+        "ike-1": "Desarrollé <strong>integraciones PHP para pasarelas de pago</strong> (webhooks) en plataformas de venta de seguros con clientes como Oxxo, Tec de Monterrey y PepsiCo.",
+        "ike-2": "Cubrí tiempos de entrega de consultoría externa construyendo landing pages y ajustes de diseño bajo presión, sin sacrificar calidad.",
+        "ic-1": "Desarrollé múltiples sitios web y blogs con HTML5, CSS3, JavaScript y WordPress.",
+        "ic-2": "Creé <strong>\"Sácate la Duda\"</strong> para la Alcaldía Álvaro Obregón — proyecto presentado ante autoridades de salud pública de la Ciudad de México.",
+        "skills-label": "Habilidades técnicas",
+        "sg-design": "Diseño & Producto",
+        "sg-ai": "IA & Productividad",
+        "sg-env": "Entornos",
+        "contact-label": "Contacto",
+        "contact-headline": "¿Trabajamos<br><span>juntos?</span>",
+        "contact-sub": "Disponible para posiciones remotas de alto impacto.",
+        "contact-remote": "🖥 Remoto preferible"
+      },
+      en: {
+        "nav-about": "Profile",
+        "nav-exp": "Experience",
+        "nav-skills": "Skills",
+        "nav-contact": "Contact",
+        "hero-eyebrow": "Senior Frontend Developer · 7 years of experience",
+        "hero-title": "High-impact interface architect. React, Flutter & Micro Frontend specialist — I own delivery from the first line of code to production.",
+        "chip-ai": "AI-assisted dev",
+        "hero-cta1": "Let's work together",
+        "hero-cta2": "View experience",
+        "about-label": "Profile",
+        "about-p1": "Developer with <strong>7 years of experience</strong> building digital products for companies like Grupo Salinas, Sky, and Financiera Independencia — platforms serving thousands of users with nationwide deployments.",
+        "about-p2": "I specialize in <strong>high-impact frontend architecture</strong>: migrating monoliths to Micro Frontends, Flutter mobile apps, and reusable design systems at enterprise scale.",
+        "about-p3": "I operate across <strong>the full stack</strong> — frontend, backend, databases, and DevOps — and integrate AI to ship faster without compromising quality.",
+        "stat1": "Years in production",
+        "stat2": "High-impact companies",
+        "stat3": "Nationwide platforms",
+        "exp-label": "Experience",
+        "present": "Present",
+        "current": "Current",
+        "role-senior": "Senior Software Developer",
+        "role-dev": "Developer",
+        "gs-1": "<strong>Independently architected and led</strong> a full frontend migration from vanilla JS to React Micro Frontends (Vite + Module Federation) — replacing a legacy monolith and enabling independent per-module delivery.",
+        "gs-2": "Designed and published a <strong>shared UI component library</strong> and a <strong>cross-platform crypto utility library</strong> adopted across multiple teams — eliminating code duplication and enforcing visual consistency at scale.",
+        "gs-3": "Delivered a <strong>complete web application in 3 weeks</strong>, from zero to production — now live across all national branches with zero post-launch critical incidents.",
+        "sky-1": "Integrated <strong>service payments directly into Sky's WhatsApp bot</strong> using Oracle + Infobip, expanding self-service capabilities and reducing call center operational load.",
+        "sky-2": "<strong>Diagnosed and resolved a critical static-asset blocking regression</strong> on the corporate site within hours — restoring full availability and performance without impacting active users.",
+        "fi-1": "Designed and built a <strong>comprehensive Flutter dashboard</strong> for in-branch executives: payment history, references, credit capacity, and new credit prospecting — consolidating multiple systems into a single interface.",
+        "fi-2": "Implemented <strong>biometric authentication</strong> for secure access to sensitive client data, meeting financial security standards.",
+        "ike-1": "Built <strong>PHP payment gateway integrations</strong> (webhooks) for insurance sales platforms serving clients including Oxxo, Tec de Monterrey, and PepsiCo.",
+        "ike-2": "Covered external consultancy delivery gaps by building landing pages and design adjustments under deadline pressure, without compromising quality.",
+        "ic-1": "Developed multiple websites and blogs using HTML5, CSS3, JavaScript and WordPress.",
+        "ic-2": "Built <strong>\"Sácate la Duda\"</strong> for the Álvaro Obregón municipality — presented before Mexico City's public health authorities.",
+        "skills-label": "Technical Skills",
+        "sg-design": "Design & Product",
+        "sg-ai": "AI & Productivity",
+        "sg-env": "Environments",
+        "contact-label": "Contact",
+        "contact-headline": "Let's build<br><span>something great.</span>",
+        "contact-sub": "Available for high-impact remote positions.",
+        "contact-remote": "🖥 Remote preferred"
+      }
+    };
+
+    let currentLang = 'es';
+
+    function toggleLang() {
+      currentLang = currentLang === 'es' ? 'en' : 'es';
+      const label = currentLang === 'es' ? '🌐 EN' : '🌐 ES';
+      document.getElementById('langBtn').textContent = label;
+      document.getElementById('mobileLangBtn').textContent = label;
+      document.documentElement.lang = currentLang;
+      const dict = i18n[currentLang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key] !== undefined) el.innerHTML = dict[key];
+      });
+    }
+
+    // Hamburger / mobile menu
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    function openMenu() {
+      mobileMenu.classList.add('is-open');
+      hamburgerBtn.setAttribute('aria-expanded', 'true');
+      hamburgerBtn.setAttribute('aria-label', 'Cerrar menú de navegación');
+      document.body.style.overflow = 'hidden';
+      const firstLink = mobileMenu.querySelector('a');
+      if (firstLink) setTimeout(() => firstLink.focus(), 310);
+    }
+
+    function closeMenu() {
+      mobileMenu.classList.remove('is-open');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+      hamburgerBtn.setAttribute('aria-label', 'Abrir menú de navegación');
+      document.body.style.overflow = '';
+      hamburgerBtn.focus();
+    }
+
+    hamburgerBtn.addEventListener('click', () => {
+      mobileMenu.classList.contains('is-open') ? closeMenu() : openMenu();
+    });
+
+    document.querySelectorAll('.mob-link').forEach(link => link.addEventListener('click', closeMenu));
+
+    document.addEventListener('click', e => {
+      if (mobileMenu.classList.contains('is-open') &&
+        !mobileMenu.contains(e.target) &&
+        !hamburgerBtn.contains(e.target)) closeMenu();
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) closeMenu();
+    });
+
+    // Scroll reveal
+    if ('IntersectionObserver' in window) {
+      const revealObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+    }
+
+    // Scroll spy — highlight active nav link
+    const spySections = document.querySelectorAll('section[id]');
+    const desktopLinks = document.querySelectorAll('.nav-links a');
+
+    if ('IntersectionObserver' in window) {
+      const spyObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            desktopLinks.forEach(link => {
+              link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+            });
+          }
+        });
+      }, { threshold: 0.45 });
+
+      spySections.forEach(s => spyObs.observe(s));
+    }
+  </script>
+</body>
+
+</html>
